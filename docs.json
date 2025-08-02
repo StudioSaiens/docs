@@ -1,5 +1,5 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
+  "$schema": "https://docs.saiens.fr/docs.json",
   "theme": "mint",
   "name": "Mint Starter Kit",
   "colors": {
@@ -96,13 +96,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:hello@saiens.fr"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://agents.saiens.fr"
     }
   },
   "contextual": {
