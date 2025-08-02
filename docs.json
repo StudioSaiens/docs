@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.saiens.fr/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Saiens Documentation",
   "colors": {
     "primary": "#006AD4",
     "light": "#007FFF",
