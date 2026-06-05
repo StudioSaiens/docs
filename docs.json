@@ -14,6 +14,13 @@
         "tab": "Guides",
         "groups": [
           {
+            "group": "Cowork",
+            "icon": "brain",
+            "pages": [
+              "cowork/guide"
+            ]
+          },
+          {
             "group": "Getting started",
             "pages": [
               "index",

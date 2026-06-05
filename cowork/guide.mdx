@@ -1,0 +1,81 @@
+---
+title: "Utiliser ton Cowork"
+description: "Guide pratique pour tirer le meilleur parti de ton second cerveau Claude Code"
+icon: "brain-circuit"
+---
+
+## C'est quoi le Cowork ?
+
+Ton Cowork est une instance de Claude Code configurée sur mesure pour toi. Il connaît ton contexte, tes projets et tes préférences — et il les retient d'une session à l'autre grâce à un **Brain** stocké sur ton ordinateur.
+
+Le Brain est une arborescence de fichiers Markdown (`Profil/`, `Projets/`, `Journal/`) que Claude lit automatiquement à chaque démarrage. Plus tu travailles avec lui, plus il est précis.
+
+---
+
+## Lancer une session
+
+Ouvre **Claude Desktop** et sélectionne le projet correspondant à ton Cowork dans la liste des projets (barre latérale gauche).
+
+Claude charge ton Brain en arrière-plan au démarrage. Tu peux commencer à lui parler immédiatement.
+
+<Note>
+  Si c'est le matin, commence par `/morning-brief` pour avoir un résumé de la situation, tes projets actifs et tes priorités du jour.
+</Note>
+
+---
+
+## Les commandes disponibles
+
+Tape `/` dans la fenêtre de conversation pour voir la liste de tes skills. Voici les essentiels :
+
+<CardGroup cols={2}>
+  <Card title="/morning-brief" icon="sun">
+    Résumé de la journée de la veille, projets actifs, 3 priorités du jour. À lancer le matin avant de commencer.
+  </Card>
+
+  <Card title="/journal" icon="book">
+    Écrit la note de journal de la journée — croise les sessions du jour avec le contexte de ton Brain.
+  </Card>
+
+  <Card title="/sync-brain" icon="rotate">
+    Consolide les captures locales vers les fichiers centraux du Brain. À lancer en fin de semaine ou après une phase de travail intense.
+  </Card>
+</CardGroup>
+
+---
+
+## Le Brain qui apprend
+
+Quand tu corriges Claude — un ton qui ne te convient pas, une erreur sur un fait, une préférence — il l'enregistre automatiquement dans `Profil/lessons.md` via le **hook de correction**.
+
+Tu verras la confirmation : `✓ noté dans lessons.md`
+
+Ces corrections s'accumulent et rendent Claude de plus en plus calibré à ta façon de travailler. **Tu n'as pas besoin de répéter deux fois la même chose.**
+
+---
+
+## Travailler sur des projets
+
+Chaque projet vit dans `Projets/` et peut disposer de ses propres instructions. Ces instructions définissent le contexte, les conventions et les règles propres au projet.
+
+Pour démarrer sur un projet :
+
+1. Dis à Claude sur quel projet tu travailles
+2. Il lit les fichiers du projet et prend le contexte
+3. Tu travailles normalement — corrections et décisions sont capturées
+
+<Tip>
+  Pour les projets longs, commence chaque session par un rapide **"où en est-on ?"** — Claude résume l'état à partir des fichiers du projet.
+</Tip>
+
+---
+
+## Bonnes pratiques
+
+**Corrige sans hésiter** — chaque correction améliore le calibrage, rien ne se perd.
+
+**Sois explicite sur le contexte** — "je travaille sur \[projet X\]" accélère le démarrage plutôt que d'attendre que Claude déduise.
+
+**Utilise les skills** — elles ont été conçues pour ton usage spécifique, pas pour un usage générique.
+
+**Consulte `Profil/lessons.md`** de temps en temps — tu verras ce que Claude a retenu de vous deux.
