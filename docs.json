@@ -12,88 +12,18 @@
     "tabs": [
       {
         "tab": "Guides",
-        "groups": [
+        "pages": [
+          "index",
           {
             "group": "Cowork",
             "icon": "brain",
             "pages": [
               "cowork/guide"
             ]
-          },
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Agents",
-          "href": "https://agents.saiens.fr",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Scripts",
-          "href": "https://scripts.saiens.fr",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Audits",
-          "href": "https://audits.saiens.fr",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.png",
