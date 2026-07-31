@@ -1,0 +1,69 @@
+---
+title: "Connecteurs et données"
+description: "Ce à quoi l'agent accède, ce qui sort, ce qui reste chez vous"
+icon: "plug"
+---
+
+Un Cowork prend sa valeur quand il travaille sur les outils réellement utilisés. Cette page dit à quoi il accède, comment, et ce que deviennent les données.
+
+---
+
+## Deux façons de brancher un outil
+
+**Par le compte.** Si l'entreprise dispose d'un abonnement Claude d'équipe, les connecteurs configurés au niveau du compte — messagerie, agenda, documents — sont accessibles au Cowork. C'est le chemin à privilégier : rien à installer, et surtout **le contrôle reste chez l'administrateur du compte**. Ce qui est accordé, restreint ou révoqué s'applique immédiatement.
+
+**Par un connecteur dédié.** Pour ce que le compte ne couvre pas, un connecteur peut être installé spécifiquement pour un Cowork, avec ses propres identifiants.
+
+<Tip>
+  La première question à poser avant toute installation est donc : **qu'est-ce qui est déjà branché sur le compte ?** On ne déroule le second chemin que pour ce qui n'est pas couvert par le premier.
+</Tip>
+
+---
+
+## À quel niveau se déclare un connecteur
+
+Un connecteur dédié peut se déclarer à deux niveaux, et la différence n'est pas cosmétique.
+
+Au niveau de **l'installation entière**, il est partagé par tous les Coworks. Au niveau d'**un Cowork**, il n'est visible que de celui-là.
+
+La règle que nous appliquons : **tout connecteur portant les données d'une entité se déclare au niveau du Cowork concerné**. Sans quoi le Cowork d'une société hériterait des accès d'une autre — exactement ce qu'un cloisonnement est censé empêcher.
+
+<Warning>
+  Un point à énoncer plutôt qu'à découvrir à l'usage : le cloisonnement d'un Cowork est **applicatif**. Il porte sur la mémoire, les documents et le comportement de l'agent. Il ne modifie pas le périmètre des autorisations accordées côté messagerie. Si une autorisation couvre plusieurs boîtes, elle les couvre quel que soit le Cowork d'où l'agent interroge. Un vrai cloisonnement suppose donc aussi des autorisations restreintes boîte par boîte.
+</Warning>
+
+---
+
+## Où vivent les données
+
+Un Cowork — profil, mémoire, documents de travail — vit **chez son propriétaire** : sur son poste, ou sur le serveur de son entreprise. Sous forme de fichiers texte ordinaires.
+
+**Saiens n'héberge aucune donnée de ses clients.** Aucune copie d'un espace de travail n'est conservée sur une infrastructure Saiens.
+
+---
+
+## Ce qui transite vers Anthropic
+
+Un agent conversationnel fonctionne en envoyant à un modèle les demandes formulées et les extraits de fichiers qu'il consulte pour y répondre. C'est inhérent à la technologie, quel que soit le fournisseur — autant le dire clairement.
+
+Pour les offres commerciales d'Anthropic (Claude for Work et API), trois éléments valent d'être connus :
+
+**Les données ne servent pas à entraîner les modèles.** Deux exceptions, toutes deux à l'initiative de l'utilisateur : l'envoi explicite d'un retour via le bouton d'évaluation, ou un consentement explicite.
+
+**La conservation est de 30 jours par défaut.** Les échanges sont supprimés des systèmes d'Anthropic dans ce délai, sauf exceptions documentées — contenu signalé comme contraire à la politique d'usage, obligation légale, ou services à conservation contrôlée.
+
+**Des régimes plus stricts existent** : les offres Enterprise permettent de configurer la durée de conservation, et des accords de conservation nulle sont disponibles pour les offres éligibles.
+
+<Note>
+  Ces éléments relèvent de la politique d'Anthropic et peuvent évoluer. Les sources officielles : [utilisation des données pour l'entraînement](https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training), [durées de conservation](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data), [conservation nulle](https://privacy.claude.com/en/articles/8956058-i-have-a-zero-data-retention-agreement-with-anthropic-what-products-does-it-apply-to). À revérifier avant tout engagement contractuel qui s'appuierait dessus.
+</Note>
+
+---
+
+## Si votre secteur est régulé
+
+Dans une structure soumise à des obligations de conformité, deux réflexes utiles.
+
+**Faites relire la section ci-dessus par votre conformité avant l'installation**, pas après. Les réponses existent et sont sourcées ; les découvrir en cours de route coûte plus cher.
+
+**Cadrez les interdits dans le Cowork lui-même.** Catégories d'informations à ne jamais divulguer, actions à ne jamais engager sans validation, périmètres à ne jamais mélanger : ces règles sont écrites dans l'espace de travail et appliquées comme des règles bloquantes. Elles se relisent et se modifient.

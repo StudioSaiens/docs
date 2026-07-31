@@ -1,0 +1,100 @@
+---
+title: "Infrastructure"
+description: "Ce qu'il faut prévoir selon le mode, et qui prend en charge quoi"
+icon: "server"
+---
+
+Cette page décrit ce qu'il faut réunir avant une installation. Pour un Cowork qui tourne sur un poste de travail, la première section suffit.
+
+---
+
+## Sur un poste de travail
+
+Rien à prévoir de particulier : l'application Claude, et un dossier sur le disque. L'installation se fait pendant le rendez-vous de mise en place.
+
+Deux points d'attention, qui reviennent souvent :
+
+**La sauvegarde du poste couvre le Cowork**, puisque c'est un dossier comme un autre. Si le poste n'est pas sauvegardé, le Cowork ne l'est pas non plus — et le travail accumulé a de la valeur au bout de quelques mois.
+
+**Les connecteurs sont communs à l'application**, pas propres à un espace. C'est le point détaillé dans [Serveur ou poste de travail](/cowork/modes).
+
+---
+
+## Sur serveur
+
+Le socle est volontairement banal, pour qu'il tienne sur n'importe quelle infrastructure et qu'une équipe technique le reconnaisse immédiatement.
+
+### Ce qu'il faut fournir
+
+<CardGroup cols={2}>
+  <Card title="Une machine Linux" icon="microchip">
+    Un serveur ou une machine virtuelle sous une distribution récente. Le dimensionnement dépend du nombre de personnes à équiper et se révise ensuite.
+  </Card>
+
+  <Card title="Docker" icon="box">
+    Docker et son extension de composition. Rien d'autre au niveau du système : tout le reste est fourni sous forme d'images.
+  </Card>
+
+  <Card title="Un accès d'administration" icon="key">
+    Un accès SSH par clé, le temps de l'installation et du suivi. Il peut être retiré ensuite.
+  </Card>
+
+  <Card title="Une sortie Internet" icon="globe">
+    Une sortie HTTPS vers les services utilisés par l'agent. Aucun port entrant n'est ouvert.
+  </Card>
+</CardGroup>
+
+### Comment l'accès est protégé
+
+Le serveur n'est pas exposé sur Internet. Il établit une connexion **sortante** vers un service de tunnel, et le trafic des utilisateurs emprunte cette connexion déjà ouverte. Il n'y a donc aucun port à ouvrir sur le pare-feu, et rien à découvrir par balayage.
+
+Devant l'application, une couche d'authentification intercepte chaque requête. Le modèle est **refus par défaut** : une personne accède uniquement si une règle nominative l'y autorise. La méthode la plus simple à exploiter, et celle que nous retenons généralement, consiste à autoriser une adresse professionnelle et à envoyer un code à usage unique par courriel — ni mot de passe supplémentaire, ni logiciel à installer.
+
+### Un espace par personne
+
+Chaque collaborateur équipé dispose de son propre espace sur la machine, de sa propre adresse d'accès et de ses propres autorisations. L'espace d'une personne n'est pas accessible depuis celui d'une autre, même hébergés sur le même serveur.
+
+Une même personne peut avoir **plusieurs Coworks** — typiquement un par société qu'elle pilote — groupés dans son espace.
+
+---
+
+## Qui prend en charge quoi
+
+C'est la question à trancher avant l'installation, pas après.
+
+| Domaine | Responsable |
+| --- | --- |
+| Conception du Cowork, des règles et des outils métier | Saiens |
+| Installation applicative sur le serveur | Saiens |
+| Évolutions et support | Saiens |
+| Fourniture, hébergement, maintenance et coût du serveur | Le client |
+| Sauvegarde du serveur | Le client |
+| Comptes et abonnements | Le client |
+
+<Note>
+  Saiens conçoit et fait fonctionner l'agent applicatif. **L'hébergement, la maintenance et le paiement du serveur restent chez le client**, sur son infrastructure ou chez l'hébergeur de son choix. Ce n'est pas une prestation d'infogérance.
+</Note>
+
+Cette répartition n'est pas une précaution de forme. Elle évite la situation où un prestataire détient l'infrastructure qui porte les données de son client, et elle garantit que celui-ci reste maître de son hébergement quoi qu'il arrive à la relation.
+
+---
+
+## Setup technique et paramétrage du Cowork
+
+Deux choses distinctes, souvent confondues.
+
+Le **setup technique** — machine, conteneur, tunnel, règle d'accès — peut être réalisé en autonomie par l'équipe informatique du client, avec la procédure que nous lui transmettons. Équiper une personne supplémentaire devient alors une opération d'interface.
+
+Le **paramétrage du Cowork** — profil, règles métier, dossiers, commandes, connecteurs — est une intervention Saiens, qui prend la suite une fois la partie technique en place. C'est là que se joue la valeur : un serveur bien installé sans Cowork paramétré ne sert à rien.
+
+---
+
+## Sauvegarde et réversibilité
+
+Deux niveaux, indépendants l'un de l'autre.
+
+La **sauvegarde de la machine** relève de celui qui l'administre, au même titre que le reste de l'infrastructure.
+
+La **sauvegarde du Cowork** est intégrée à l'interface : elle recopie automatiquement le contenu vers un espace de stockage choisi par le client — SharePoint, un Drive, ou autre — dans un seul sens, sans risque de conflit. Elle apporte une seconde copie indépendante du serveur, et l'accès aux fichiers depuis un endroit déjà familier.
+
+Quant à la **réversibilité** : un Cowork étant un ensemble de fichiers texte, il se récupère intégralement par simple copie de dossier, à tout moment, et se confie à qui l'on veut. C'est aussi ce qui rend un changement d'hébergeur sans enjeu.

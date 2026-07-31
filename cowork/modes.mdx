@@ -1,0 +1,75 @@
+---
+title: "Serveur ou poste de travail"
+description: "Les deux modes de déploiement, leurs différences réelles, et comment choisir"
+icon: "scale-unbalanced"
+---
+
+Un Cowork se déploie de deux façons : **sur un poste de travail**, dans l'application Claude, ou **sur un serveur**, accessible depuis un navigateur.
+
+Commençons par ce qui ne change pas, parce que c'est le point le plus important : **le Cowork lui-même est identique dans les deux cas**. Mêmes règles, même profil, mêmes dossiers, mêmes commandes. Le choix porte sur l'endroit où il tourne, pas sur ce qu'il sait faire. Et comme tout tient dans des fichiers, passer de l'un à l'autre plus tard n'est pas une reprise de zéro.
+
+---
+
+## Les deux modes
+
+<CardGroup cols={2}>
+  <Card title="Sur un poste" icon="laptop">
+    Le Cowork vit dans un dossier de l'ordinateur et s'utilise depuis l'application Claude. Rien à héberger, rien à administrer, mise en route immédiate.
+  </Card>
+
+  <Card title="Sur serveur" icon="server">
+    Le Cowork tourne sur une machine dédiée et s'utilise depuis une adresse web protégée. Accessible de partout, sauvegardé avec le serveur, et prêt à accueillir plusieurs personnes.
+  </Card>
+</CardGroup>
+
+---
+
+## Ce qui les sépare vraiment
+
+|  | Sur un poste | Sur serveur |
+| --- | --- | --- |
+| **Mise en route** | Immédiate | Un serveur à fournir au préalable |
+| **Accès** | Depuis la machine | Depuis n'importe quel navigateur, authentification requise |
+| **Continuité** | Liée au poste | Indépendante du matériel |
+| **Plusieurs utilisateurs** | Un Cowork par poste | Un espace par personne sur la même machine |
+| **Cloisonnement des outils** | Les connecteurs sont communs à l'application | Chaque espace a ses propres accès |
+| **Traitements de fond** | Quand le poste est allumé | En continu |
+| **Coût d'infrastructure** | Aucun | À la charge de l'entreprise |
+
+---
+
+## Le point qui tranche le plus souvent
+
+Pour quelqu'un qui pilote **plusieurs entités** dont les informations ne doivent pas se mélanger, la nuance suivante décide généralement du mode.
+
+Sur un poste, il est tout à fait possible de tenir un espace par société : profil, mémoire et documents sont alors réellement séparés. En revanche, **les connecteurs — messagerie, agenda, documents — restent communs à l'application**. Un espace dédié à une société a donc techniquement accès aux mêmes boîtes que les autres.
+
+Sur serveur, chaque espace dispose de ses propres accès. Le cloisonnement porte alors aussi sur les outils, pas seulement sur la mémoire.
+
+<Warning>
+  Aucun de ces dispositifs ne modifie le périmètre des autorisations accordées côté messagerie. Si une autorisation d'accès couvre plusieurs boîtes, elle les couvre quel que soit l'endroit d'où l'agent interroge. Le cloisonnement se joue autant dans le paramétrage des accès que dans l'architecture du Cowork.
+</Warning>
+
+---
+
+## Comment choisir
+
+**Le poste convient** à un utilisateur unique, travaillant depuis la même machine, sans exigence de cloisonnement des outils. C'est le mode le plus rapide à mettre en route, et le bon choix pour démarrer.
+
+**Le serveur s'impose** dès qu'une de ces conditions apparaît : plusieurs personnes à équiper, une exigence de séparation réelle entre entités, un besoin de traitements qui tournent sans qu'une machine soit allumée, ou simplement le souci de ne pas faire reposer des années de travail accumulé sur un ordinateur portable.
+
+<Tip>
+  Commencer sur poste puis basculer sur serveur est un chemin courant et sans douleur : le Cowork se copie, l'usage ne change pas. L'inverse est vrai aussi.
+</Tip>
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Ce qu'il faut pour un serveur" icon="server" href="/cowork/infrastructure">
+    Le socle technique, l'accès protégé, et qui prend en charge quoi.
+  </Card>
+
+  <Card title="Connecteurs et données" icon="plug" href="/cowork/connecteurs-donnees">
+    Ce à quoi l'agent accède, ce qui sort, ce qui reste.
+  </Card>
+</CardGroup>
