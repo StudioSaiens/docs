@@ -15,10 +15,29 @@
         "pages": [
           "index",
           {
-            "group": "Cowork",
+            "group": "Comprendre",
+            "icon": "compass",
+            "pages": [
+              "cowork/concept",
+              "cowork/modes"
+            ]
+          },
+          {
+            "group": "Mettre en place",
+            "icon": "server",
+            "pages": [
+              "cowork/infrastructure",
+              "cowork/connecteurs-donnees"
+            ]
+          },
+          {
+            "group": "Au quotidien",
             "icon": "brain",
             "pages": [
-              "cowork/guide"
+              "cowork/guide",
+              "cowork/evolutions",
+              "cowork/support",
+              "cowork/glossaire"
             ]
           }
         ]

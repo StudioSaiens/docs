@@ -1,0 +1,57 @@
+---
+title: "Glossaire"
+description: "Les mots qu'on emploie, en une phrase chacun"
+icon: "book-open"
+---
+
+Les termes qui reviennent dans cette documentation et dans nos échanges. Si un mot manque ici, signalez-le — c'est qu'on l'emploie sans l'avoir expliqué.
+
+---
+
+## Les essentiels
+
+**Cowork** — Un espace de travail : une arborescence de fichiers qu'un agent lit, enrichit et utilise pour travailler avec vous. Une personne peut en avoir plusieurs, typiquement un par entité qu'elle pilote.
+
+**Brain** — Le contenu d'un Cowork : le profil, la mémoire, les règles, les dossiers. Ce sont des fichiers texte ordinaires, qui appartiennent à leur propriétaire.
+
+**Commande** (ou _skill_) — Un processus métier réutilisable, déclenché en tapant `/` suivi de son nom. Écrit pour un usage précis, pas générique.
+
+**Connecteur** — Le lien entre l'agent et un outil déjà utilisé : messagerie, agenda, documents.
+
+---
+
+## Ce qui fait apprendre
+
+**Capture des corrections** — Le mécanisme qui écrit une règle dans le Brain dès que l'agent est repris. C'est ce qui évite de répéter deux fois la même chose.
+
+**`lessons.md`** — Le fichier où s'accumulent ces règles. Il s'ouvre, se relit et se corrige à la main.
+
+**Niveau d'autonomie** — Ce que l'agent a le droit de faire sans demander. Le plus courant est « validation » : il prépare et propose, vous validez.
+
+**Cloisonnement** — La séparation entre plusieurs périmètres. Elle porte toujours sur la mémoire et les documents ; sur les accès aux outils, elle dépend du mode de déploiement et du paramétrage des autorisations.
+
+---
+
+## Côté installation
+
+**Setup technique** — La partie infrastructure : machine, conteneur, tunnel, règle d'accès. Délégable à une équipe informatique.
+
+**Paramétrage du Cowork** — La partie métier : profil, règles, dossiers, commandes, connecteurs. C'est l'intervention Saiens, et c'est là que se joue la valeur.
+
+**Entretien de cadrage** — La séance qui précède la construction d'un Cowork. Elle sert à comprendre un métier, ses irritants et ses interdits — pas à paramétrer un logiciel.
+
+**Tunnel** — Le dispositif qui rend un Cowork accessible depuis un navigateur **sans ouvrir de port entrant** sur le serveur : la machine se connecte vers l'extérieur, jamais l'inverse.
+
+**Refus par défaut** — Le principe de la couche d'authentification : personne n'accède tant qu'une règle ne l'autorise pas nommément. Y compris l'administrateur.
+
+**Code à usage unique** — La méthode d'authentification retenue le plus souvent : saisie de l'adresse professionnelle, réception d'un code par courriel, valable dix minutes et utilisable une fois.
+
+---
+
+## Côté données
+
+**Réversibilité** — Le fait de pouvoir récupérer et emporter l'intégralité d'un Cowork par simple copie de dossier, sans dépendre de Saiens ni d'un format propriétaire.
+
+**Sauvegarde du Cowork** — La recopie automatique de l'espace de travail vers un stockage choisi, dans un seul sens. Distincte de la sauvegarde de la machine, qui relève de son administrateur.
+
+**Conservation** — La durée pendant laquelle un échange reste chez le fournisseur du modèle avant suppression. Voir [Connecteurs et données](/cowork/connecteurs-donnees).
